@@ -166,19 +166,19 @@
   ],
   "variable": [
     {
-      "id": "8f404535-98ec-4c60-b86f-9108aa5fdee6",
+      "id": "0b094f44-ee30-4a6d-9d92-d90c564975a7",
       "key": "url",
       "value": "",
       "type": "string"
     },
     {
-      "id": "58a90f6b-b116-4488-b8ef-6153f9f3c423",
+      "id": "97923f4e-bff7-4cc0-a75f-c4a1625725d3",
       "key": "city",
       "value": "",
       "type": "string"
     },
     {
-      "id": "94e4d9b0-eace-4942-a645-d6b455d68dd0",
+      "id": "b8fc1935-2a1d-4058-b5cb-5eff428c26ef",
       "key": "id",
       "value": "",
       "type": "string"
