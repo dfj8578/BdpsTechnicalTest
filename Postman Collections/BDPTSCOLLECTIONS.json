@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "f782e3c2-466b-4a44-94a3-554cbe891c53",
+    "name": "BDPTSCOLLECTIONS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET",
+      "item": [
+        {
+          "name": "GetCityUsers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "46d30e34-1509-479f-adf8-75e33358e263",
+                "exec": [
+                  "pm.test(\"Verify Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Response time is less than 200ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                  "});\r",
+                  "console.log(\"City of Manchester\")\r",
+                  "pm.variables.get(\"url\");\r",
+                  "let urlVar = pm.variables.get(\"url\");\r",
+                  "console.log(\"Value for Url variables is : \"+urlVar);\r",
+                  "\r",
+                  "let globalVar = pm.globals.get(\"ENV\")\r",
+                  "console.log(globalVar);\r",
+                  "pm.variables.get(\"city\");\r",
+                  "let cityVar = pm.variables.get(\"city\");\r",
+                  "console.log(\"Name for city variables is :\"+cityVar);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "4a6972e8-8bb6-40cd-94db-50e60d9f4146",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{url}}/city/{{city}}/users"
+          },
+          "response": []
+        },
+        {
+          "name": "GetUserId",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ad11ac79-544f-4c2f-bf51-f0f247608707",
+                "exec": [
+                  "pm.test(\"Verify Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Verify getting a Specific Response of one User\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Response time is less than 200ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "0227dbd5-796e-45ce-b689-cf1f57be6ccd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{url}}/user/{{id}}"
+          },
+          "response": []
+        },
+        {
+          "name": "GetUsers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Verify Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "pm.test(\"Verify Response time is less than 200ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                  "});"
+                ],
+                "id": "b97b34cf-0bae-437d-9fa0-de50a1913baf"
+              }
+            }
+          ],
+          "_postman_id": "0b8f12df-589d-42b1-969c-50dac96216e1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{url}}/users"
+          },
+          "response": []
+        },
+        {
+          "name": "GetUserID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Verify Variable id is not Present\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});"
+                ],
+                "id": "5b887839-cc04-4df9-a3c7-e513259b161f"
+              }
+            }
+          ],
+          "_postman_id": "907c57f7-095c-4f5d-822e-4e16b88d3444",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{url}}/user/{{}}"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "775fa3e5-bd8a-4978-87b6-5caf475cc887"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "df624c43-be3e-4c2c-8540-6b08256ac000",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "8afe3766-6076-49d2-98fa-87dadb5afc44",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "d321cc29-905c-45ee-a136-17473f8d24ff",
+      "key": "url",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "b5efbd70-4c9e-49b0-9512-411e0bff8f97",
+      "key": "city",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "d5591029-19d5-4abb-a42d-d4fe4d98ea28",
+      "key": "id",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
